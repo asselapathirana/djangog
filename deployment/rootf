@@ -1,6 +1,0 @@
-[all:vars]
-env=dev
-[su]
-testa.pathirana.net 
-
-
