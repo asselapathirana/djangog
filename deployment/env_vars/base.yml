@@ -1,8 +1,8 @@
 ---
 
-git_repo: https://github.com/asselapathirana/tdddjango.git
+git_repo: https://github.com/asselapathirana/djangog.git
 
-project_name: superlists
-application_name: superlists
+project_name: djangog
+application_name: mysite
 #version: vps_test
 version: HEAD
