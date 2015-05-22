@@ -16,6 +16,11 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
+on_heroku = False
+if 'DYNO' in os.environ:
+    on_heroku = True
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
@@ -111,7 +116,10 @@ SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 ALLOWED_HOSTS = ['*']
 
-STATIC_ROOT = 'staticfiles'
+if on_heroku:
+    STATIC_ROOT = 'staticfiles'
+else: 
+    STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '../static'))
 
 
 try:
