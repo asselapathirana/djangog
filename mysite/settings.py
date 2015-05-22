@@ -75,6 +75,9 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
+on_heroku = False
+if 'DYNO' in os.environ:
+    on_heroku = True
 
 if on_heroku:
     DATABASES = {
